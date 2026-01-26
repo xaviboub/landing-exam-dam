@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen DAM1T CSS</title>
+    <style>
+        body {
+            background-color: #ff0000; /* Color vermell */
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px #000000;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            text-align: center;
+        }
+
+        input {
+            padding: 10px;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            border: none;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Examen DAM1T CSS</h1>
+        <form onsubmit="verificarPassword(event)">
+            <input type="password" id="password" placeholder="Contrassenya" required autofocus>
+            <br>
+            <button type="submit">Entrar</button>
+        </form>
+    </div>
+
+    <script>
+        function verificarPassword(event) {
+            event.preventDefault(); // Evita que el formulari es recarregui
+            
+            var pass = document.getElementById("password").value;
+            
+            if (pass === "9239") {
+                // Redirecció a l'escriptori de la Generalitat
+                window.location.href = "https://elmeuescriptori.gestioeducativa.gencat.cat/login";
+            } else {
+                alert("Contrassenya incorrecta. Torna-ho a provar.");
+                document.getElementById("password").value = "";
+            }
+        }
+    </script>
+
+</body>
+</html>
